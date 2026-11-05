@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cubic yards helper — Topsoil Cost Calculator</title>
+<style>body{font-family:system-ui,sans-serif;max-width:40rem;margin:2rem auto;padding:0 1rem;line-height:1.5}
+label,input{display:block;margin:.5rem 0}input{padding:.4rem;width:100%;max-width:12rem}
+.card{border:1px solid #ddd;border-radius:8px;padding:1rem;margin-top:1rem}a.cta{display:inline-block;margin-top:1rem;background:#2563eb;color:#fff;padding:.6rem 1rem;border-radius:6px;text-decoration:none}</style></head>
+<body>
+<h1>Cubic yards helper</h1>
+<p>Area (ft²) × depth (inches) ÷ 324 ≈ cubic yards. Full cost estimate on the main site.</p>
+<label>Area (sq ft) <input id="area" type="number" value="200"></label>
+<label>Depth (inches) <input id="depth" type="number" value="3"></label>
+<div class="card" id="out"></div>
+<p><a class="cta" href="https://topsoilcostcalculator.com/">Open Topsoil Cost Calculator</a></p>
+<script>
+const area=document.getElementById('area'), depth=document.getElementById('depth'), out=document.getElementById('out');
+function go(){const a=+area.value||0,d=+depth.value||0; out.textContent=(a*d/324).toFixed(2)+' cubic yards (rough)';}
+area.oninput=depth.oninput=go; go();
+</script></body></html>
